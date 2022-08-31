@@ -1,0 +1,20 @@
+<svg id="Portão" xmlns="http://www.w3.org/2000/svg" width="2434" height="1151" viewBox="0 0 2434 1151">
+  <g>
+    <g>
+      <rect x="1341" y="469" width="50" height="218" fill="#d79d8a"/>
+      <circle cx="1366" cy="440" r="25" fill="#bc5a40"/>
+      <rect x="1337" y="461" width="58" height="8" fill="#8e442d"/>
+    </g>
+    <g>
+      <rect x="1544" y="469" width="50" height="218" fill="#d79d8a"/>
+      <circle cx="1569" cy="440" r="25" fill="#bc5a40"/>
+      <rect x="1540" y="461" width="58" height="8" fill="#8e442d"/>
+    </g>
+    <path d="M1544,687H1391V495s23.5473-5.977,45.5-10.9916c12.3145-2.8129,24.1272-6.0084,31-6.0084s18.6856,3.1955,31,6.0084C1520.4527,489.023,1544,495,1544,495Z" fill="#c6bab6"/>
+    <polygon points="1420 687 1391 687 1391 495 1420 488 1420 687" fill="#eae3e1"/>
+    <polygon points="1544 687 1515 687 1515 488 1544 495 1544 687" fill="#eae3e1"/>
+    <polygon points="1513 687 1484 687 1484 481 1513 487 1513 687" fill="#eae3e1"/>
+    <polygon points="1451 687 1422 687 1422 487 1451 481 1451 687" fill="#eae3e1"/>
+    <path d="M1482,687h-29V480s10.875-2,14.5-2,14.5,2,14.5,2Z" fill="#eae3e1"/>
+  </g>
+</svg>
