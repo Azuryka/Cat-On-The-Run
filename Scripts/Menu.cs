@@ -25,6 +25,12 @@ public class Menu : MonoBehaviour
         menuPanel.SetActive(false);
     }
 
+    public void InstructionsButton()
+    {
+        instructionsPanel.SetActive(true);
+        menuPanel.SetActive(false);
+    }
+
     public void LevelSelected(int level)
     {
         switch (level)

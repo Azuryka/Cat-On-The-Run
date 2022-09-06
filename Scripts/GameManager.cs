@@ -19,12 +19,21 @@ public class GameManager : MonoBehaviour
 
     public bool inGame;
 
-    private bool pause = false;
+    public bool pause = false;
+
+    [SerializeField]
+    private string sceneName;
 
     private void Awake()
     {
         lives = 3;
         objective = 0;
+
+        if (sceneName == "Level")
+        {
+            inGame = true;
+        }
+        else { inGame = false; }
     }
 
     private void Update()
@@ -51,11 +60,13 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
             pause = true;
+            ui.PausePanel();
         }
         else if (pause)
         {
             Time.timeScale = 1;
             pause = false;
+            ui.PausePanel();
         }
     }
 

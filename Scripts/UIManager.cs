@@ -10,6 +10,8 @@ public class UIManager : MonoBehaviour
 
     public TMP_Text livesUI, scoreUI, objectiveUI;
 
+    public GameObject panelPause;
+
     void Start()
     {
         AttLives();
@@ -30,5 +32,14 @@ public class UIManager : MonoBehaviour
     public void AttObjective()
     {
         objectiveUI.text = $"{gameManager.objective}/{gameManager.objectiveSO.Value}";
+    }
+
+    public void PausePanel()
+    {
+        if (gameManager.pause == true)
+        {
+            panelPause.SetActive(true);
+        }
+        else { panelPause.SetActive(false); }
     }
 }

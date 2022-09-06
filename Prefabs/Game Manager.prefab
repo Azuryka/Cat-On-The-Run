@@ -44,4 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38512f29394b896458ccaa1822d7491d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inGame: 1
+  ui: {fileID: 0}
+  levelSO: {fileID: 0}
+  objectiveSO: {fileID: 0}
+  scoreSO: {fileID: 0}
+  lives: 0
+  objective: 0
+  inGame: 0
