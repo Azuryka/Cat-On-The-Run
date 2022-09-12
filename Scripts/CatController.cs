@@ -5,6 +5,12 @@ public class CatController : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
 
+    [SerializeField]
+    private AudioManager audioManager;
+
+    [SerializeField]
+    private CatDamageEffect damageEffect;
+
     public Vector2[] ways;
     private Vector2 posNow;
     private Vector2 posTarget;
@@ -54,6 +60,7 @@ public class CatController : MonoBehaviour
     {
         if(other.tag == "Obstacle")
         {
+            damageEffect.Damage();
             gameManager.LoseLife();
             Destroy(other.gameObject);
         }
@@ -61,11 +68,13 @@ public class CatController : MonoBehaviour
         {
             gameManager.GainPoint();
             Destroy(other.gameObject);
+            audioManager.SECatFood();
         }
         else if (other.tag == "Fish")
         {
             gameManager.GainObjectivePoint();
             Destroy(other.gameObject);
+            audioManager.SEFish();
         }
     }
 }

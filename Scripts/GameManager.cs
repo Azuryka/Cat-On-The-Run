@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Pause()
+    public void Pause()
     {
         if (!pause)
         {

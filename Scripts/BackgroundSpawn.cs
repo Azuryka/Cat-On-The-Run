@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParallaxManager : MonoBehaviour
+public class BackgroundSpawn : MonoBehaviour
 {
-    public GameObject wall, strip;
     public GameObject[] clouds, trees;
 
     public float delay = 5.0f;
-    public float delayW = 5.0f;
-    public float delayS = 5.0f;
-    public Vector2 treePosition, wallPosition, stripPosition;
+    public Vector2 treePosition;
 
     [SerializeField]
     private float number;
@@ -18,8 +15,6 @@ public class ParallaxManager : MonoBehaviour
     void Start()
     {
         StartCoroutine(Background());
-        StartCoroutine(Wall());
-        StartCoroutine(Strip());
     }
 
     IEnumerator Background()
@@ -38,26 +33,6 @@ public class ParallaxManager : MonoBehaviour
         }
     }
 
-    IEnumerator Wall()
-    {
-        while (true)
-        {
-            SpawnWall();
-
-            yield return new WaitForSeconds(delayW);
-        }
-    }
-
-    IEnumerator Strip()
-    {
-        while (true)
-        {
-            SpawnStrip();
-
-            yield return new WaitForSeconds(delayS);
-        }
-    }
-
     public void SpawnCloud()
     {
         var position = new Vector2(10.0f, Random.Range(2.0f, 4.4f));
@@ -68,15 +43,4 @@ public class ParallaxManager : MonoBehaviour
     {
         Instantiate(trees[Random.Range(0, trees.Length)], treePosition, Quaternion.identity);
     }
-
-    public void SpawnWall()
-    {
-        Instantiate(wall, wallPosition, Quaternion.identity);
-    }
-
-    public void SpawnStrip()
-    {
-        Instantiate(strip, stripPosition, Quaternion.identity);
-    }
-
 }

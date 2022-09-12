@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1386055767
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 10
   m_Sprite: {fileID: 3286163911610860551, guid: 64f4d689be8b2014daddea9fe0842e40, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,4 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b3a52988b5751545a11d17f96bb2bad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
+  gameManager: {fileID: 0}
+  name: Cloud

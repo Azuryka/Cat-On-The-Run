@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    public float speed = 1.0f;
+    [SerializeField]
+    private string type = "object";
 
-    void Update()
+    private void Update()
     {
-        this.transform.Translate(-speed * Time.deltaTime, 0, 0);
-
-        if (this.transform.position.x < -30)
+        if (type == "Wall")
         {
-            Destroy(this.gameObject);
+            if (this.transform.position.x < -33.0f)
+            {
+                this.transform.position = new Vector2(10.12f, this.transform.position.y);
+            }
+        }
+        else if (type == "Strip")
+        {
+            if (this.transform.position.x < -33.0f)
+            {
+                this.transform.position = new Vector2(18.15f, this.transform.position.y);
+            }
         }
     }
 }

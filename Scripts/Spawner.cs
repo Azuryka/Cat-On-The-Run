@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
 
     private float timer;
 
-    private float[] y = { 1.04f, -1.61f, -3.39f};
+    private float[] y = { 1.10f, -1.61f, -3.39f};
 
     private void Start()
     {
