@@ -29,6 +29,9 @@ public class Item : MonoBehaviour
             case 3:
                 speed = 3.5f;
                 break;
+            case 4:
+                speed = 3.5f;
+                break;
         }
 
         upperLimit = this.transform.position.y + 0.1f;

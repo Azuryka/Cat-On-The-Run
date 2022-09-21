@@ -8,6 +8,9 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
 
+    [SerializeField]
+    private AudioManager audioManager;
+
     public GameObject menuPanel, levelsPanel, instructionsPanel, recordsPanel;
 
     private void Start()
@@ -23,12 +26,14 @@ public class Menu : MonoBehaviour
     {
         levelsPanel.SetActive(true);
         menuPanel.SetActive(false);
+        audioManager.SEClick();
     }
 
     public void InstructionsButton()
     {
         instructionsPanel.SetActive(true);
         menuPanel.SetActive(false);
+        audioManager.SEClick();
     }
 
     public void LevelSelected(int level)
@@ -51,8 +56,11 @@ public class Menu : MonoBehaviour
                 gameManager.scoreSO.Value = 0;
                 break;
             case 4:
+                gameManager.levelSO.Value = 4;
+                gameManager.scoreSO.Value = 0;
                 break;
         }
+        audioManager.SEClick();
         loader.StartLoad("Level");
     }
 
@@ -60,10 +68,12 @@ public class Menu : MonoBehaviour
     {
         panelOpen.SetActive(false);
         menuPanel.SetActive(true);
+        audioManager.SEClick();
     }
 
     public void QuitButton()
     {
+        audioManager.SEClick();
         Application.Quit();
     }
 }

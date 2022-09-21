@@ -24,6 +24,9 @@ public class Obstacle : MonoBehaviour
             case 3:
                 speed = 3.5f;
                 break;
+            case 4:
+                speed = 3.5f;
+                break;
         }
     }
 

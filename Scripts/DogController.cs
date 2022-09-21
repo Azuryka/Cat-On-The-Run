@@ -9,19 +9,19 @@ public class DogController : MonoBehaviour
 
     void Update()
     {
-        if (gameManager.lives == 3)
+        if (gameManager.livesSO.Value == 3)
         {
             this.transform.position = new Vector2(-11f, -1.7f);
         }
-        else if (gameManager.lives == 2)
+        else if (gameManager.livesSO.Value == 2)
         {
             this.transform.position = new Vector2(-9f, -1.7f);
         }
-        else if (gameManager.lives == 1)
+        else if (gameManager.livesSO.Value == 1)
         {
             this.transform.position = new Vector2(-8f, -1.7f);
         }
-        else if (gameManager.lives == 0)
+        else if (gameManager.livesSO.Value == 0)
         {
             this.transform.position = new Vector2(-6.75f, -1.7f);
         }

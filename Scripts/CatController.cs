@@ -58,19 +58,19 @@ public class CatController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Obstacle")
+        if(other.tag == "Obstacle" && gameManager.inGame)
         {
             damageEffect.Damage();
             gameManager.LoseLife();
             Destroy(other.gameObject);
         }
-        else if (other.tag == "Cat Food")
+        else if (other.tag == "Cat Food" && gameManager.inGame)
         {
             gameManager.GainPoint();
             Destroy(other.gameObject);
             audioManager.SECatFood();
         }
-        else if (other.tag == "Fish")
+        else if (other.tag == "Fish" && gameManager.inGame)
         {
             gameManager.GainObjectivePoint();
             Destroy(other.gameObject);

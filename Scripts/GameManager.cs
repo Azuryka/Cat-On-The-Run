@@ -7,31 +7,32 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private UIManager ui;
 
+    [SerializeField]
+    private SceneLoader sceneLoader;
+
     public IntSO levelSO;
 
     public IntSO objectiveSO;
 
     public IntSO scoreSO;
 
-    public int lives;
+    public IntSO currentObjectiveSO;
 
-    public int objective;
+    public IntSO livesSO;
 
     public bool inGame;
 
     public bool pause = false;
 
-    [SerializeField]
-    private string sceneName;
+    public string sceneName;
 
     private void Awake()
     {
-        lives = 3;
-        objective = 0;
-
         if (sceneName == "Level")
         {
             inGame = true;
+            livesSO.Value = 3;
+            currentObjectiveSO.Value = 0;
         }
         else { inGame = false; }
     }
@@ -43,14 +44,16 @@ public class GameManager : MonoBehaviour
             Pause();
         }
 
-        if (inGame && lives <= 0)
+        if (inGame && livesSO.Value <= 0)
         {
-            print("Game Over");
+            sceneLoader.StartLoad("Results");
+            inGame = false;
         }
 
-        if (inGame && objective == objectiveSO.Value)
+        if (inGame && currentObjectiveSO.Value == objectiveSO.Value && levelSO.Value != 4)
         {
-            print("Level Complete!");
+            sceneLoader.StartLoad("Results");
+            inGame = false;
         }
     }
 
@@ -72,7 +75,7 @@ public class GameManager : MonoBehaviour
 
     public void LoseLife()
     {
-        lives--;
+        livesSO.Value--;
         ui.AttLives();
     }
 
@@ -84,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void GainObjectivePoint()
     {
-        objective++;
+        currentObjectiveSO.Value++;
         ui.AttObjective();
     }
 }

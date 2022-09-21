@@ -143,6 +143,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 2d853f94ce3f0614f825596ed62ec4e6, type: 2}
     - target: {fileID: 8223243285131284662, guid: 59b61681f0300924aa6a56c72cca4994, type: 3}
+      propertyPath: livesSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 34fa38d58da008c4c8bf72a950693b59, type: 2}
+    - target: {fileID: 8223243285131284662, guid: 59b61681f0300924aa6a56c72cca4994, type: 3}
       propertyPath: scoreSO
       value: 
       objectReference: {fileID: 11400000, guid: 41f0cd28397977a4f94e1708f4d55639, type: 2}
@@ -154,6 +158,10 @@ PrefabInstance:
       propertyPath: objectiveSO
       value: 
       objectReference: {fileID: 11400000, guid: 33318825c9bb56248b38094f5c512eb5, type: 2}
+    - target: {fileID: 8223243285131284662, guid: 59b61681f0300924aa6a56c72cca4994, type: 3}
+      propertyPath: currentObjectiveSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 36c4a4a9fba51c644936e10179be23c4, type: 2}
     - target: {fileID: 8223243285131284663, guid: 59b61681f0300924aa6a56c72cca4994, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -419,7 +427,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 147966797}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 220782893}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: LevelSelected
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &147966797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,6 +591,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loader: {fileID: 1535458109}
   gameManager: {fileID: 446904257}
+  audioManager: {fileID: 2141446872}
   menuPanel: {fileID: 835024518}
   levelsPanel: {fileID: 1992461604}
   instructionsPanel: {fileID: 503831871}

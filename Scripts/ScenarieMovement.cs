@@ -32,6 +32,7 @@ public class ScenarieMovement : MonoBehaviour
                 speed = 3.5f;
                 break;
             case 4:
+                speed = 3.5f;
                 break;
         }
 

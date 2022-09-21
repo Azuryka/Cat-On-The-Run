@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
 
     public void AttLives()
     {
-        livesUI.text = $"{gameManager.lives}";
+        livesUI.text = $"{gameManager.livesSO.Value}";
     }
 
     public void AttScore()
@@ -31,7 +31,14 @@ public class UIManager : MonoBehaviour
 
     public void AttObjective()
     {
-        objectiveUI.text = $"{gameManager.objective}/{gameManager.objectiveSO.Value}";
+        if (gameManager.levelSO.Value != 4)
+        {
+            objectiveUI.text = $"{gameManager.currentObjectiveSO.Value}/{gameManager.objectiveSO.Value}";
+        }
+        else
+        {
+            objectiveUI.text = $"{gameManager.currentObjectiveSO.Value}";
+        }
     }
 
     public void PausePanel()

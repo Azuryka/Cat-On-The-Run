@@ -10,9 +10,17 @@ public class BackToMenu : MonoBehaviour
     [SerializeField]
     private SceneLoader loader;
 
+    [SerializeField]
+    private AudioManager audioManager;
+
     public void BackToMenuButton()
     {
-        gameManager.Pause();
+        if (gameManager.sceneName == "Level")
+        {
+            gameManager.Pause();
+            gameManager.inGame = false;
+        }
+        audioManager.SEClick();
         loader.StartLoad("Menu");
     }
 }
