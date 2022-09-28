@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -18,6 +16,20 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     private AudioClip[] songs;
+
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey("volume"))
+        {
+            music.volume = PlayerPrefs.GetFloat("volume");
+            soundEffect.volume = PlayerPrefs.GetFloat("volume");
+        }
+        else
+        {
+            music.volume = 1;
+            soundEffect.volume = 1;
+        }
+    }
 
     private void Start()
     {
@@ -49,5 +61,11 @@ public class AudioManager : MonoBehaviour
     {
         soundEffect.clip = sounds[2];
         soundEffect.Play();
+    }
+
+    public void ChangeVolume()
+    {
+        music.volume = PlayerPrefs.GetFloat("volume");
+        soundEffect.volume = PlayerPrefs.GetFloat("volume");
     }
 }

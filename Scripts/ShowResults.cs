@@ -39,6 +39,16 @@ public class ShowResults : MonoBehaviour
                 lvlResultTXT.text = $"Completo com Sucesso!";
                 lvlResultTXT.color = Color.green;
                 background.color = new Color(0, 0.29f, 0.22f, 1);
+
+                if (gameManager.levelSO.Value == 1)
+                {
+                    PlayerPrefs.SetString("level1Complete", "true");
+                }
+
+                if (gameManager.levelSO.Value == 2)
+                {
+                    PlayerPrefs.SetString("level2Complete", "true");
+                }
             }
         }
         else
