@@ -19,7 +19,7 @@ public class Volume : MonoBehaviour
     private Sprite[] images;
 
     [SerializeField]
-    private Image renderer;
+    private Image imageRenderer;
 
     private void Awake()
     {
@@ -55,23 +55,6 @@ public class Volume : MonoBehaviour
     private void Update()
     {
         ChangeSprite();
-
-        /*if (sliderVolume.normalizedValue >= 0.8)
-        {
-            renderer.sprite = images[0];
-        }
-        else if (sliderVolume.normalizedValue < 0.8 && sliderVolume.normalizedValue > 0.3)
-        {
-            renderer.sprite = images[1];
-        }
-        else if (sliderVolume.normalizedValue <= 0.3 && sliderVolume.normalizedValue > 0.1)
-        {
-            renderer.sprite = images[2];
-        }
-        else if (sliderVolume.normalizedValue < 0.1)
-        {
-            renderer.sprite = images[3];
-        }*/
     }
 
     private void ChangeSprite()
@@ -80,19 +63,19 @@ public class Volume : MonoBehaviour
         {
             if (PlayerPrefs.GetFloat("volume") >= 0.8)
             {
-                renderer.sprite = images[0];
+                imageRenderer.sprite = images[0];
             }
             else if (PlayerPrefs.GetFloat("volume") < 0.8 && PlayerPrefs.GetFloat("volume") > 0.3)
             {
-                renderer.sprite = images[1];
+                imageRenderer.sprite = images[1];
             }
             else if (PlayerPrefs.GetFloat("volume") <= 0.3 && PlayerPrefs.GetFloat("volume") > 0.1)
             {
-                renderer.sprite = images[2];
+                imageRenderer.sprite = images[2];
             }
             else if (PlayerPrefs.GetFloat("volume") < 0.1)
             {
-                renderer.sprite = images[3];
+                imageRenderer.sprite = images[3];
             }
         }
     }

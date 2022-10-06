@@ -2809,7 +2809,7 @@ MonoBehaviour:
   - {fileID: 1245323999, guid: 2c479ce8d2f16004799d015fb20f5725, type: 3}
   - {fileID: -964927495, guid: 2c479ce8d2f16004799d015fb20f5725, type: 3}
   - {fileID: 679287091, guid: 2c479ce8d2f16004799d015fb20f5725, type: 3}
-  renderer: {fileID: 803348431}
+  imageRenderer: {fileID: 803348431}
 --- !u!1 &1451874759
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,6 +3746,10 @@ PrefabInstance:
       propertyPath: ui
       value: 
       objectReference: {fileID: 1406744454}
+    - target: {fileID: 8223243285131284662, guid: 59b61681f0300924aa6a56c72cca4994, type: 3}
+      propertyPath: NameSo
+      value: 
+      objectReference: {fileID: 11400000, guid: a46fdc29d4f2ff2428805ab34dd5d8d0, type: 2}
     - target: {fileID: 8223243285131284662, guid: 59b61681f0300924aa6a56c72cca4994, type: 3}
       propertyPath: levelSO
       value: 

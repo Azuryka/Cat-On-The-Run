@@ -8,6 +8,9 @@ public class ShowResults : MonoBehaviour
     private GameManager gameManager;
 
     [SerializeField]
+    private JSONHandler jsonHandler;
+
+    [SerializeField]
     private Image background;
 
     [SerializeField]
@@ -58,9 +61,14 @@ public class ShowResults : MonoBehaviour
             imFishTXT.text = $"{ gameManager.currentObjectiveSO.Value }";
             imCatFoodTXT.text = $"{gameManager.scoreSO.Value}";
 
-            int finalScore = gameManager.scoreSO.Value + (gameManager.currentObjectiveSO.Value * 10);
+            int finalScore = gameManager.scoreSO.Value + (gameManager.currentObjectiveSO.Value * 15);
             imResultTXT.color = Color.green;
             imResultTXT.text = $"{finalScore} pontos!";
+
+            jsonHandler.PlayerName(gameManager.NameSo.Value);
+            jsonHandler.PlayerScore(finalScore);
+
+            jsonHandler.SaveData();
         }
     }
 

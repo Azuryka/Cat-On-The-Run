@@ -23,7 +23,7 @@ public class ScenarieMovement : MonoBehaviour
         switch (gameManager.levelSO.Value)
         {
             case 1:
-                speed = 1.5f;
+                speed = 2.0f;
                 break;
             case 2:
                 speed = 2.5f;

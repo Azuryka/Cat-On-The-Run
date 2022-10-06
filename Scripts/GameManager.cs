@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     public IntSO livesSO;
 
+    public StringSO NameSo;
+
     public bool inGame;
 
     public bool pause = false;

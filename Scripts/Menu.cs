@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Menu : MonoBehaviour
@@ -11,12 +12,19 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private AudioManager audioManager;
 
-    public GameObject menuPanel, levelsPanel, instructionsPanel, recordsPanel;
+    [SerializeField]
+    private JSONHandler jsonHandler;
+
+    [SerializeField]
+    private TMP_Text inputFieldText;
+
+    public GameObject menuPanel, levelsPanel, instructionsPanel, recordsPanel, inputPanel;
 
     private void Start()
     {
-        menuPanel.SetActive(true);
+        inputPanel.SetActive(true);
 
+        menuPanel.SetActive(false);
         levelsPanel.SetActive(false);
         instructionsPanel.SetActive(false);
         recordsPanel.SetActive(false);
@@ -32,6 +40,13 @@ public class Menu : MonoBehaviour
     public void InstructionsButton()
     {
         instructionsPanel.SetActive(true);
+        menuPanel.SetActive(false);
+        audioManager.SEClick();
+    }
+
+    public void RecordsButton()
+    {
+        recordsPanel.SetActive(true);
         menuPanel.SetActive(false);
         audioManager.SEClick();
     }
@@ -69,6 +84,14 @@ public class Menu : MonoBehaviour
         panelOpen.SetActive(false);
         menuPanel.SetActive(true);
         audioManager.SEClick();
+    }
+
+    public void ConfirmButton()
+    {
+        inputPanel.SetActive(false);
+        menuPanel.SetActive(true);
+
+        gameManager.NameSo.Value = inputFieldText.text;
     }
 
     public void QuitButton()

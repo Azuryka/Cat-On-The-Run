@@ -19,7 +19,7 @@ public class Spawner : MonoBehaviour
         switch (gameManager.levelSO.Value)
         {
             case 1:
-                timer = 4.0f;
+                timer = 3.5f;
                 break;
             case 2:
                 timer = 3.0f;
