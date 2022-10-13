@@ -7,7 +7,7 @@ public class Parallax : MonoBehaviour
     [SerializeField]
     private string type = "object";
 
-    private void Update()
+    private void LateUpdate()
     {
         if (type == "Wall")
         {
